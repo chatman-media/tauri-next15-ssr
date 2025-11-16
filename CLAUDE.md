@@ -51,6 +51,14 @@ bun run test:all     # Все тесты (Unit + E2E)
 # Storybook
 bun run storybook    # UI компоненты dev сервер :6006
 
+# Knip
+bun run knip         # Поиск неиспользуемого кода
+bun run knip:production  # Только production зависимости
+
+# Commitizen
+bun run commit       # Интерактивное создание коммита
+git cz               # Альтернатива
+
 # Tauri
 bun tauri            # Tauri CLI команды
 ```
@@ -244,6 +252,12 @@ pub fn run() {
 
 ### Формат коммитов (обязательно!)
 
+**Использовать Commitizen для упрощения:**
+```bash
+bun run commit  # Интерактивный процесс создания коммита
+```
+
+**Или вручную:**
 ```bash
 # ✅ Правильно
 feat: add new feature
@@ -270,6 +284,7 @@ Fixed bug
 bun run fix:all     # Исправить и проверить всё
 bun run test        # Запустить тесты
 bun run build       # Проверить сборку
+bun run knip        # Найти неиспользуемые зависимости
 ```
 
 ### Добавление зависимости
