@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/chatman-media/tauri-next15-ssr/compare/v1.0.0...v1.1.0) (2025-11-16)
+
+### Features
+
+* add coderabbit ai code review integration ([d6bf213](https://github.com/chatman-media/tauri-next15-ssr/commit/d6bf2134962da1af75f40bb792f1e330d1fb6624))
+
 ## 1.0.0 (2025-11-16)
 
 ### Features
