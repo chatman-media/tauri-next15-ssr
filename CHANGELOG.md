@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/chatman-media/tauri-next15-ssr/compare/v1.2.0...v1.2.1) (2025-11-16)
+
+### Bug Fixes
+
+* resolve storybook localStorage error with node.js v25 ([0de64b7](https://github.com/chatman-media/tauri-next15-ssr/commit/0de64b75d3668d242c3e9850b3ee7f994efa2cd2))
+
 ## [1.2.0](https://github.com/chatman-media/tauri-next15-ssr/compare/v1.1.0...v1.2.0) (2025-11-16)
 
 ### Features
