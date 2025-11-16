@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/chatman-media/tauri-next15-ssr/compare/v1.1.0...v1.2.0) (2025-11-16)
+
+### Features
+
+* add knip and commitizen for code quality ([a885e9d](https://github.com/chatman-media/tauri-next15-ssr/commit/a885e9d62d908dfda3a9b99a8a91ff901f2c7ca2))
+
 ## [1.1.0](https://github.com/chatman-media/tauri-next15-ssr/compare/v1.0.0...v1.1.0) (2025-11-16)
 
 ### Features
