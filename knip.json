@@ -7,9 +7,7 @@
     "**/*.test.{ts,tsx}",
     "**/*.stories.{ts,tsx}"
   ],
-  "project": [
-    "src/**/*.{ts,tsx}"
-  ],
+  "project": ["src/**/*.{ts,tsx}"],
   "ignore": [
     "dist/**",
     "node_modules/**",
@@ -24,7 +22,8 @@
     "conventional-changelog-conventionalcommits",
     "postcss",
     "tailwindcss",
-    "tw-animate-css"
+    "tw-animate-css",
+    "@tauri-apps/plugin-opener"
   ],
   "next": {
     "entry": ["next.config.ts"]
@@ -36,6 +35,10 @@
     "entry": ["playwright.config.ts", "e2e/**/*.spec.ts"]
   },
   "storybook": {
-    "entry": [".storybook/main.ts", ".storybook/preview.ts", "**/*.stories.{ts,tsx}"]
+    "entry": [
+      ".storybook/main.ts",
+      ".storybook/preview.ts",
+      "**/*.stories.{ts,tsx}"
+    ]
   }
 }
