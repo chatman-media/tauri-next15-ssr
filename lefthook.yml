@@ -1,0 +1,30 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint-staged:
+      run: bunx lint-staged
+
+commit-msg:
+  commands:
+    commitlint:
+      run: |
+        echo "Checking commit message format..."
+        FIRST_LINE=$(head -n 1 "{1}")
+        if ! echo "$FIRST_LINE" | grep -qE "^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\(.+\))?:.+"; then
+          echo "❌ Commit message must follow Conventional Commits format:"
+          echo "   <type>(<optional scope>): <description>"
+          echo ""
+          echo "   Types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert"
+          echo ""
+          echo "   Examples:"
+          echo "   - feat: add user authentication"
+          echo "   - fix(api): resolve CORS issue"
+          echo "   - docs: update README"
+          exit 1
+        fi
+        echo "✅ Commit message format is valid"
+
+pre-push:
+  commands:
+    tests:
+      run: bun run test

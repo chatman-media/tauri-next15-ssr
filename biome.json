@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.1.1/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.5/schema.json",
   "vcs": {
     "enabled": false,
     "clientKind": "git",
@@ -8,27 +8,24 @@
   "files": {
     "ignoreUnknown": false,
     "includes": [
-      "src/**",
+      "src/**/*.{ts,tsx,js,jsx,css}",
+      "e2e/**/*.{ts,tsx,js,jsx}",
       "./*.json",
       "./*.js",
       "./*.ts",
       "./*.mts",
       "./*.mjs",
-      "!src-tauri/**"
-    ],
-    "experimentalScannerIgnores": ["dist/", "src-tauri/"]
+      "!src-tauri",
+      "!!**/dist/",
+      "!!**/src-tauri/",
+      "!!**/.storybook/",
+      "!!**/storybook-static/"
+    ]
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2
-  },
-  "assist": {
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
-    }
   },
   "linter": {
     "enabled": true,
@@ -48,9 +45,18 @@
         "useComponentExportOnlyModules": {
           "level": "error",
           "options": {
-            "allowExportNames": ["metadata"]
+            "allowExportNames": [
+              "metadata",
+              "badgeVariants",
+              "buttonVariants",
+              "useFormField",
+              "Form"
+            ]
           }
         }
+      },
+      "a11y": {
+        "noSvgWithoutTitle": "off"
       },
       "performance": {
         "noImgElement": "off"
@@ -58,6 +64,11 @@
     }
   },
   "css": {
+    "parser": {
+      "cssModules": true,
+      "allowWrongLineComments": true,
+      "tailwindDirectives": true
+    },
     "formatter": {
       "quoteStyle": "double"
     }
