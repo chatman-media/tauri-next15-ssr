@@ -1,0 +1,100 @@
+# CodeRabbit Configuration
+# https://docs.coderabbit.ai/guides/configure-coderabbit
+
+# Language and response style
+language: ru
+early_access: false
+enable_free_tier: true
+
+# Review settings
+reviews:
+  # High-level summary of changes
+  high_level_summary: true
+
+  # Poem at the end of review (fun feature)
+  poem: true
+
+  # Review level: "auto" | "full" | "essential"
+  review_status: auto
+
+  # Collapse walkthrough details
+  collapse_walkthrough: false
+
+  # Auto-review settings
+  auto_review:
+    enabled: true
+
+    # Auto-approve simple changes
+    auto_incremental_review: true
+
+    # Ignore specific files/patterns
+    ignore_title_keywords:
+      - "WIP"
+      - "DO NOT REVIEW"
+      - "DRAFT"
+
+  # Request changes for critical issues
+  request_changes_workflow: false
+
+  # Path-based instructions for focused reviews
+  path_instructions:
+    - path: "src/**/*.{ts,tsx}"
+      instructions: |
+        - Проверяй строгость типов TypeScript
+        - Убедись что нет использования any
+        - Проверь React hooks правила
+        - Проверь performance (memo, useMemo, useCallback)
+
+    - path: "e2e/**/*.spec.ts"
+      instructions: |
+        - Проверь что тесты покрывают критичные сценарии
+        - Убедись в использовании правильных локаторов
+        - Проверь timeouts и assertions
+
+    - path: "**/*.test.{ts,tsx}"
+      instructions: |
+        - Проверь coverage критичной логики
+        - Избегай тестирования деталей реализации
+        - Используй Testing Library best practices
+
+    - path: "src-tauri/**/*.rs"
+      instructions: |
+        - Проверь безопасность Rust кода
+        - Проверь обработку ошибок
+        - Убедись в правильном использовании Tauri API
+
+    - path: ".github/workflows/**"
+      instructions: |
+        - Проверь корректность CI/CD pipeline
+        - Убедись в использовании правильных versions
+        - Проверь secrets и permissions
+
+# Chat settings
+chat:
+  auto_reply: true
+
+# Knowledge base - paths to documentation
+knowledge_base:
+  - "README.md"
+  - "CONTRIBUTING.md"
+  - "CLAUDE.md"
+
+# Tools and integrations
+tools:
+  # Biome linter integration
+  biome:
+    enabled: true
+
+  # GitHub Actions integration
+  github-actions:
+    enabled: true
+
+# File patterns to ignore
+ignore:
+  - "**/*.md"
+  - "**/*.lock"
+  - "**/dist/**"
+  - "**/node_modules/**"
+  - "**/.next/**"
+  - "**/storybook-static/**"
+  - "src-tauri/target/**"

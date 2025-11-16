@@ -137,7 +137,28 @@ BREAKING CHANGE: API endpoints now use /v2/ prefix"
      - Unit tests (Vitest)
      - E2E tests (Playwright)
      - Rust lint (rustfmt + clippy)
+   - CodeRabbit автоматически проведет AI code review
+   - Можешь использовать команды CodeRabbit:
+     ```bash
+     @coderabbitai review          # Запросить ревью
+     @coderabbitai explain         # Объяснить изменения
+     @coderabbitai generate tests  # Сгенерировать тесты
+     ```
    - Semantic-release создаст релиз автоматически при мерже в main
+
+### CodeRabbit Review
+
+После создания PR, CodeRabbit автоматически:
+1. Проанализирует все изменения
+2. Оставит комментарии с рекомендациями
+3. Создаст high-level summary
+4. Проверит специфичные аспекты для разных типов файлов:
+   - TypeScript/React: типы, hooks, performance
+   - Rust: безопасность, обработка ошибок
+   - Тесты: покрытие, best practices
+   - CI/CD: корректность pipeline
+
+Если не нужен ревью, добавь в title PR: `WIP`, `DO NOT REVIEW` или `DRAFT`
 
 ## Semantic Release
 
