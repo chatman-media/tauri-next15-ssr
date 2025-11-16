@@ -1,7 +1,7 @@
 [package]
-name = "tauri-nextjs-template"
+name = "timeline-studio-ai"
 version = "0.1.0"
-description = "A Tauri App"
+description = "A Timeline Studio AI App"
 authors = ["you"]
 edition = "2021"
 
